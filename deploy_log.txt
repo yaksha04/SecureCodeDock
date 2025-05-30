@@ -1,0 +1,54 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: flask in /home/yaksha04/.local/lib/python3.10/site-packages (from -r requirements.txt (line 1)) (3.1.1)
+Requirement already satisfied: itsdangerous>=2.2.0 in /home/yaksha04/.local/lib/python3.10/site-packages (from flask->-r requirements.txt (line 1)) (2.2.0)
+Requirement already satisfied: click>=8.1.3 in /home/yaksha04/.local/lib/python3.10/site-packages (from flask->-r requirements.txt (line 1)) (8.2.1)
+Requirement already satisfied: jinja2>=3.1.2 in /home/yaksha04/.local/lib/python3.10/site-packages (from flask->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: werkzeug>=3.1.0 in /home/yaksha04/.local/lib/python3.10/site-packages (from flask->-r requirements.txt (line 1)) (3.1.3)
+Requirement already satisfied: blinker>=1.9.0 in /home/yaksha04/.local/lib/python3.10/site-packages (from flask->-r requirements.txt (line 1)) (1.9.0)
+Requirement already satisfied: markupsafe>=2.1.1 in /home/yaksha04/.local/lib/python3.10/site-packages (from flask->-r requirements.txt (line 1)) (3.0.2)
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 197B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 2.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 94B done
+#4 DONE 0.1s
+
+#5 [1/5] FROM docker.io/library/python:3.10-slim@sha256:49454d2bf78a48f217eb25ecbcb4b5face313fea6a6e82706465a6990303ada2
+#5 resolve docker.io/library/python:3.10-slim@sha256:49454d2bf78a48f217eb25ecbcb4b5face313fea6a6e82706465a6990303ada2
+#5 resolve docker.io/library/python:3.10-slim@sha256:49454d2bf78a48f217eb25ecbcb4b5face313fea6a6e82706465a6990303ada2 0.1s done
+#5 DONE 0.1s
+
+#6 [3/5] COPY app/requirements.txt requirements.txt
+#6 CACHED
+
+#7 [4/5] RUN pip install -r requirements.txt
+#7 CACHED
+
+#8 [2/5] WORKDIR /app
+#8 CACHED
+
+#9 [5/5] COPY app/ .
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:fc09271f4f222c3cb43b477f29c59f2aa7159500f024b25fb1a573311fade083 0.0s done
+#10 exporting config sha256:dbf65c0b903ef51a45beaca564d9008bc4196d4b42889b222ce57307fbbbca81 done
+#10 exporting attestation manifest sha256:29688356a138609a6a4a19b41bf92126d6c9cda6278e40be280cbf523cdba4bb 0.1s done
+#10 exporting manifest list sha256:d48e08e3be5a6ec62c5e7dcb0ff86f6708491c64b0c8ea8dfdf4b49a37042c45
+#10 exporting manifest list sha256:d48e08e3be5a6ec62c5e7dcb0ff86f6708491c64b0c8ea8dfdf4b49a37042c45 0.1s done
+#10 naming to docker.io/library/secure-python-app:latest 0.0s done
+#10 unpacking to docker.io/library/secure-python-app:latest 0.0s done
+#10 DONE 0.4s
+docker: Error response from daemon: Conflict. The container name "/secure_python_app" is already in use by container "d26527b2bd271926ebbff7b574c35a22d8d224554649e87b50ae17fdd360d15d". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
