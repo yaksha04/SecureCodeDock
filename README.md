@@ -1,67 +1,136 @@
-SecureCodeDock is a comprehensive DevSecOps pipeline project designed to automate the security scanning, containerization, and deployment of a Python application. This pipeline integrates modern tools like Docker, Git, and Python to streamline continuous integration and continuous delivery (CI/CD), while embedding real-time security analysis using Bandit — a Python static code analyzer.
+# SecureCodeDock 🔐🐳  
+**A Lightweight DevSecOps Pipeline with Security Scanning, Dockerization, and CLI Monitoring**
 
-🔥 Key Features
-Automated Security Scanning:
-Uses Bandit to perform static analysis of Python code, detecting potential security vulnerabilities early in the development lifecycle.
+SecureCodeDock is a DevSecOps-focused automation project that demonstrates how security can be integrated early into the CI/CD lifecycle using static code analysis, containerization, and terminal-based observability.
 
-Containerization with Docker:
-Automates building Docker images and running containers, ensuring consistent environments and simplifying deployment.
+## 🚀 Features
 
-Real-time Terminal Dashboard:
-A Python-based CLI dashboard displays detailed deployment logs and security scan reports, providing instant insights into the pipeline’s status and security posture.
+### 🔍 Static Security Scanning (Shift-Left Security)
+- Uses **Bandit** to perform static analysis on Python source code
+- Detects common security issues such as:
+  - Insecure function usage
+  - Hardcoded secrets
+  - Unsafe imports
+- Generates a detailed scan report in the `reports/` directory
 
-Custom Shell Script Pipeline:
-A centralized shell script (pipeline.sh) orchestrates the entire pipeline — scanning, building, containerizing, and launching the dashboard.
+### 🐳 Dockerized Application
+- Builds a Docker image for the Python application
+- Ensures environment consistency across systems
+- Runs the application inside a container
 
-🛠️ Technologies Used
-Docker: Containerization and environment consistency
+### 📊 Terminal-Based Dashboard (CLI UI)
+- Python-based terminal dashboard (`ui.py`)
+- Displays:
+  - Security scan results
+  - Deployment logs
+  - Pipeline execution status
+- No browser UI — optimized for CI/CD environments
 
-Git: Version control and source code management
+### ⚙️ Automated Pipeline Script
+- Single command execution using `pipeline.sh`
+- Orchestrates:
+  1. Security scan
+  2. Dependency installation
+  3. Docker image build
+  4. Container deployment
 
-Python: Scripting for scanning (Bandit integration) and dashboard visualization
 
-Bandit: Static code security analyzer for Python
+## 🧱 Project Structure
 
-Linux Bash Scripting: Orchestrating the pipeline workflow
+SecureCodeDock/
+├── app.py # Sample Python application
+├── scan.py # Bandit security scanning script
+├── ui.py # Terminal-based dashboard
+├── pipeline.sh # Main pipeline automation script
+├── Dockerfile # Docker image definition
+├── requirements.txt # Python dependencies
+├── reports/ # Scan reports and deployment logs
+├── venv/ # Python virtual environment
+└── README.md
 
-🚀 How It Works
-Security Scan:
-The pipeline runs Bandit on the application source code to identify security vulnerabilities and generates a detailed scan report.
 
-Containerization:
-A Docker image is built from the application and deployed as a container, enabling environment standardization.
+## 🛠️ Prerequisites
 
-Dashboard:
-The Python CLI dashboard reads and displays logs and scan reports in real time, helping developers and DevOps engineers quickly identify issues.
+- Python 3.10+
+- Docker
+- Git
+- Linux / WSL / macOS
+
+
+## ⚙️ Setup & Execution
+
+### 1️⃣ Clone the Repository
+
+git clone https://github.com/yaksha04/SecureCodeDock.git
+cd SecureCodeDock
+
+2️⃣ Create & Activate Virtual Environment
+python3 -m venv venv
+source venv/bin/activate
+
+3️⃣ Install Python Dependencies
+pip install -r requirements.txt
+
+4️⃣ Make Pipeline Executable
+chmod +x pipeline.sh
+
+5️⃣ Run the DevSecOps Pipeline
+./pipeline.sh
+
+
+This will:
+
+Run Bandit security scan
+
+Generate reports in reports/
+
+Build Docker image
+
+Deploy container
+
+6️⃣ View Security Reports
+cat reports/bandit_report.txt
+
+7️⃣ Launch Terminal Dashboard (UI)
+python3 ui.py
+
+📌 Notes
+
+This project focuses on static analysis, not runtime security
+
+Security scan does not fail the pipeline by default (can be extended)
+
+Designed as a learning-grade DevSecOps pipeline
+
+
+🔮 Possible Enhancements
+
+Add Trivy for container image scanning
+
+Fail pipeline on high-severity vulnerabilities
+
+Integrate GitHub Actions CI
+
+Export reports to cloud storage
+
+Add Kubernetes deployment
+
 
 🎯 Why This Project?
-Demonstrates practical knowledge of DevSecOps principles by integrating security scanning into the CI/CD pipeline.
 
-Showcases ability to work with industry-standard tools and automate complex workflows.
+Demonstrates DevSecOps fundamentals
 
-Enhances real-time visibility into application security and deployment status.
+Shows security-first mindset
 
-Perfect for internship portfolios targeting DevOps and DevSecOps roles.
+Uses industry-relevant tools
 
-📁 Project Structure (Simplified)
-bash
-Copy
-Edit
-securecodedock/
-├── app/                 # Python application code
-├── scanner/             # Security scanning scripts (Bandit integration)
-├── reports/             # Generated scan and deployment reports
-├── dashboard/           # Terminal dashboard script for monitoring
-├── scripts/             # Pipeline orchestration shell script
-├── Dockerfile           # Docker image definition
-├── pipeline.sh          # Main pipeline runner script
-└── README.md            # Project documentation
-📌 Try it Yourself
-Clone the repo
+Ideal for DevOps / DevSecOps internship interviews
 
-Run ./scripts/pipeline.sh to execute the full pipeline
 
-View real-time logs and security reports in the terminal dashboard
+👤 Author
 
-Analyze the reports in the reports/ folder
+Yaksha
+DevOps & DevSecOps Enthusiast
+
+
 
