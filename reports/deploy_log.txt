@@ -1,0 +1,76 @@
+Collecting flask (from -r requirements.txt (line 1))
+  Downloading flask-3.1.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting blinker>=1.9.0 (from flask->-r requirements.txt (line 1))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting click>=8.1.3 (from flask->-r requirements.txt (line 1))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting itsdangerous>=2.2.0 (from flask->-r requirements.txt (line 1))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting jinja2>=3.1.2 (from flask->-r requirements.txt (line 1))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting markupsafe>=2.1.1 (from flask->-r requirements.txt (line 1))
+  Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting werkzeug>=3.1.0 (from flask->-r requirements.txt (line 1))
+  Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
+Downloading flask-3.1.2-py3-none-any.whl (103 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.3/103.3 kB 2.0 MB/s eta 0:00:00
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 5.5 MB/s eta 0:00:00
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 8.8 MB/s eta 0:00:00
+Installing collected packages: markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, flask
+Successfully installed blinker-1.9.0 click-8.3.1 flask-3.1.2 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.3 werkzeug-3.1.4
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 197B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 7.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python:3.10-slim@sha256:fb1feae978f1729094eb0405e5f9564e55b2b3b24db3261d30ba4f22c5001a8a
+#4 DONE 0.0s
+
+#5 [2/5] WORKDIR /app
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [3/5] COPY app/requirements.txt requirements.txt
+#7 ERROR: failed to calculate checksum of ref 739f8463-7a6a-4584-a356-cd3bc6a9ab1c::cpsh7ufijwsmjpvaul61jjt3l: "/app/requirements.txt": not found
+
+#8 [4/5] RUN pip install -r requirements.txt
+#8 CACHED
+
+#9 [5/5] COPY app/ .
+#9 ERROR: failed to calculate checksum of ref 739f8463-7a6a-4584-a356-cd3bc6a9ab1c::cpsh7ufijwsmjpvaul61jjt3l: "/app": not found
+------
+ > [3/5] COPY app/requirements.txt requirements.txt:
+------
+------
+ > [5/5] COPY app/ .:
+------
+Dockerfile:5
+--------------------
+   3 |     WORKDIR /app
+   4 |     
+   5 | >>> COPY app/requirements.txt requirements.txt
+   6 |     RUN pip install -r requirements.txt
+   7 |     
+--------------------
+ERROR: failed to build: failed to solve: failed to compute cache key: failed to calculate checksum of ref 739f8463-7a6a-4584-a356-cd3bc6a9ab1c::cpsh7ufijwsmjpvaul61jjt3l: "/app/requirements.txt": not found
+Unable to find image 'secure-python-app:latest' locally
+docker: Error response from daemon: pull access denied for secure-python-app, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+Run 'docker run --help' for more information
